@@ -135,9 +135,9 @@
 #include "Extensions/Game/MW05/Effects/Stretched4by3.hpp"
 #include "Extensions/Game/MW05/Effects/AGoodSenseOfSpeed.hpp"
 #include "Extensions/Game/MW05/Effects/TheUpsideDown.hpp"
-#include "Extensions/Game/MW05/Effects/WarpDrive.hpp"
+#include "Extensions/Game/MW05/Effects/Squeezy.hpp"
 #include "Extensions/Game/MW05/Effects/PimpMyRide.hpp"
-#include "Extensions/Game/MW05/Effects/InvisibleEverything.hpp"
+#include "Extensions/Game/MW05/Effects/InvisibleWorld.hpp"
 #include "Extensions/Game/MW05/Effects/MirrorPort.hpp"
 
 // Modifiers
@@ -407,9 +407,9 @@ namespace Extensions::Game::MW05 {
       IGameEffectsHandler::AddEffect(new Effects::Stretched4by3());
       IGameEffectsHandler::AddEffect(new Effects::AGoodSenseOfSpeed());
       IGameEffectsHandler::AddEffect(new Effects::TheUpsideDown());
-      IGameEffectsHandler::AddEffect(new Effects::WarpDrive());
+      IGameEffectsHandler::AddEffect(new Effects::Squeezy());
       IGameEffectsHandler::AddEffect(new Effects::PimpMyRide());
-      IGameEffectsHandler::AddEffect(new Effects::InvisibleEverything());
+      IGameEffectsHandler::AddEffect(new Effects::InvisibleWorld());
       IGameEffectsHandler::AddEffect(new Effects::MirrorPort());
 
       // Sort for config handler

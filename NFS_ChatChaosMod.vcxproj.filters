@@ -646,19 +646,19 @@
     <ClInclude Include="src\Extensions\Game\MW05\Effects\Stretched4by3.hpp">
       <Filter>Extensions\Game\MW05\Effects</Filter>
     </ClInclude>
-    <ClInclude Include="src\Extensions\Game\MW05\Effects\AGoodSenseOfSpeed.hpp">
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\Squeezy.hpp">
       <Filter>Extensions\Game\MW05\Effects</Filter>
     </ClInclude>
     <ClInclude Include="src\Extensions\Game\MW05\Effects\TheUpsideDown.hpp">
       <Filter>Extensions\Game\MW05\Effects</Filter>
     </ClInclude>
-    <ClInclude Include="src\Extensions\Game\MW05\Effects\WarpDrive.hpp">
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\AGoodSenseOfSpeed.hpp">
       <Filter>Extensions\Game\MW05\Effects</Filter>
     </ClInclude>
     <ClInclude Include="src\Extensions\Game\MW05\Effects\PimpMyRide.hpp">
       <Filter>Extensions\Game\MW05\Effects</Filter>
     </ClInclude>
-    <ClInclude Include="src\Extensions\Game\MW05\Effects\InvisibleEverything.hpp">
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\InvisibleWorld.hpp">
       <Filter>Extensions\Game\MW05\Effects</Filter>
     </ClInclude>
     <ClInclude Include="src\Extensions\Game\MW05\Effects\MirrorPort.hpp">

@@ -263,7 +263,8 @@
          "NeedsActivationWarning": false,
          "Duration": 50.0,
          "IncompatibleWith": [
-            83
+            83,
+            114
          ]
       },
       {
@@ -902,7 +903,8 @@
          "NeedsActivationWarning": false,
          "Duration": 50.0,
          "IncompatibleWith": [
-            23
+            23,
+            114
          ]
       },
       {
@@ -1142,7 +1144,8 @@
          "NeedsActivationWarning": false,
          "Duration": 60.0,
          "IncompatibleWith": [
-            108
+            108,
+            113
          ]
       },
       {
@@ -1153,7 +1156,8 @@
          "NeedsActivationWarning": false,
          "Duration": 60.0,
          "IncompatibleWith": [
-            107
+            107,
+            113
          ]
       },
       {
@@ -1164,6 +1168,7 @@
          "NeedsActivationWarning": false,
          "Duration": 60.0,
          "IncompatibleWith": [
+            110,
             111,
             113
          ]
@@ -1176,20 +1181,19 @@
          "NeedsActivationWarning": false,
          "Duration": 60.0,
          "IncompatibleWith": [
-            111,
+            109,
             113
          ]
       },
       {
-         "Name": "Warp Drive",
-         "Description": "Kerbal 'Speed' Program",
+         "Name": "Squeezy",
+         "Description": "The faster you go, the more the world collapses on you",
          "IsEnabled": true,
          "IsStatusEffect": false,
          "NeedsActivationWarning": false,
          "Duration": 60.0,
          "IncompatibleWith": [
             109,
-            110,
             113
          ]
       },
@@ -1203,32 +1207,28 @@
          "IncompatibleWith": []
       },
       {
-         "Name": "Invisible Everything",
+         "Name": "Invisible World",
          "Description": "Hasta la vista, el mundo",
          "IsEnabled": true,
          "IsStatusEffect": false,
          "NeedsActivationWarning": false,
          "Duration": 60.0,
          "IncompatibleWith": [
-            103,
-            109,
-            110,
-            111
+            107,
+            108
          ]
       },
       {
-        "Name": "MirrorPort",
-        "Description": "Mirror, mirror, on the wall, who's the fastest of them all?",
-        "IsEnabled": true,
-        "IsStatusEffect": false,
-        "NeedsActivationWarning": false,
-        "Duration": 60.0,
-        "IncompatibleWith": [
-          23,
-          83,
-          111,
-          113
-        ]
+         "Name": "MirrorPort",
+         "Description": "Mirror, mirror, on the wall, who's the fastest of them all?",
+         "IsEnabled": true,
+         "IsStatusEffect": false,
+         "NeedsActivationWarning": false,
+         "Duration": 60.0,
+         "IncompatibleWith": [
+            23,
+            83
+         ]
       }
    ]
 }

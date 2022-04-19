@@ -26,30 +26,49 @@
 
 namespace Extensions::Game::MW05::Effects {
   namespace details::AGoodSenseOfSpeed {
-    static constexpr std::uintptr_t sBack   = 0x6CF574;
-    static inline float             sFactor = 1.0f;
+    namespace H {
+      static constexpr std::uintptr_t sBack   = 0x6CF574;
+      static inline float             sFactor = 1.0f;
 
-    static void __declspec(naked) detour() {
-      _asm {
-        fmul sFactor
-        fstp dword ptr [esp+0x20]
-        fild dword ptr [esp+0x30]
-        jmp [sBack]
+      static void __declspec(naked) detour() {
+        _asm {
+          fmul sFactor
+          fstp dword ptr [esp+0x20]
+          fild dword ptr [esp+0x30]
+          jmp [sBack]
+        }
       }
-    }
-  }  // namespace details::AGoodSenseOfSpeed
+    }  // namespace H
+    namespace V {
+      static constexpr std::uintptr_t sBack   = 0x6CF583;
+      static constexpr std::uintptr_t sInner  = 0x7C4B80;
+      static inline float             sFactor = 1.0f;
+
+      static void __declspec(naked) detour() {
+        _asm {
+          fmul sFactor
+          call [sInner]
+          jmp [sBack]
+        }
+      }
+    }  // namespace V
+  }    // namespace details::AGoodSenseOfSpeed
 
   class AGoodSenseOfSpeed : public IGameEffect {
-    std::unique_ptr<MemoryEditor::Editor::DetourInfo> mDetour;
+    std::unique_ptr<MemoryEditor::Editor::DetourInfo> mDetourH;
+    std::unique_ptr<MemoryEditor::Editor::DetourInfo> mDetourV;
 
    protected:
     virtual bool _activate() noexcept override {
-      mDetour = MemoryEditor::Get().Detour(0x6CF56C, reinterpret_cast<std::uintptr_t>(&details::AGoodSenseOfSpeed::detour));
+      mDetourH = MemoryEditor::Get().Detour(0x6CF56C, reinterpret_cast<std::uintptr_t>(&details::AGoodSenseOfSpeed::H::detour));
+      mDetourV = MemoryEditor::Get().Detour(0x6CF57E, reinterpret_cast<std::uintptr_t>(&details::AGoodSenseOfSpeed::V::detour));
       return true;
     }
     virtual bool _deactivate() noexcept override {
-      mDetour->Undetour();
-      mDetour.reset();
+      mDetourH->Undetour();
+      mDetourV->Undetour();
+      mDetourH.reset();
+      mDetourV.reset();
       return true;
     }
 
@@ -57,12 +76,16 @@ namespace Extensions::Game::MW05::Effects {
       auto* pvehicle = OpenMW::PVehicleEx::GetPlayerInstance();
       if (!pvehicle) return;
 
-      auto speed                          = pvehicle->GetSpeed();
-      details::AGoodSenseOfSpeed::sFactor = 1.0f;
-      if (speed > 20.0f) details::AGoodSenseOfSpeed::sFactor /= std::min(10.0f, (speed / 180.0f) * 10.0f);
+      auto speed                             = pvehicle->GetSpeed();
+      details::AGoodSenseOfSpeed::H::sFactor = 1.0f;
+      details::AGoodSenseOfSpeed::V::sFactor = 1.0f;
+      if (speed > 20.0f) {
+        details::AGoodSenseOfSpeed::H::sFactor /= std::min(10.0f, (speed / 180.0f) * 10.0f);
+        details::AGoodSenseOfSpeed::V::sFactor *= std::min(1.75f, std::max(1.0f, (speed / 180.0f) * 5.0f));
+      }
     }
 
    public:
-    explicit AGoodSenseOfSpeed() : IGameEffect(109), mDetour(nullptr) {}
+    explicit AGoodSenseOfSpeed() : IGameEffect(109), mDetourH(nullptr), mDetourV(nullptr) {}
   };
 }  // namespace Extensions::Game::MW05::Effects

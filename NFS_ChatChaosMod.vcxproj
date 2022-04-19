@@ -616,7 +616,7 @@ echo f | xcopy "$(SolutionDir)$(Configuration)\src\Helpers\Config.json" "D:\Game
     <ClInclude Include="src\Extensions\Game\MW05\Effects\InsaneTraffic.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\IntoTheVoid.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\InvisibleCars.hpp" />
-    <ClInclude Include="src\Extensions\Game\MW05\Effects\InvisibleEverything.hpp" />
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\InvisibleWorld.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\JellyCars.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\JesusTakeTheWheel.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\JumpToCarLot.hpp" />
@@ -644,7 +644,7 @@ echo f | xcopy "$(SolutionDir)$(Configuration)\src\Helpers\Config.json" "D:\Game
     <ClInclude Include="src\Extensions\Game\MW05\Effects\RCCars.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\RKO.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\SlotMachine.hpp" />
-    <ClInclude Include="src\Extensions\Game\MW05\Effects\AGoodSenseOfSpeed.hpp" />
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\Squeezy.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\SpinToWin.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\StickShiftPro.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\STONKS.hpp" />
@@ -677,7 +677,7 @@ echo f | xcopy "$(SolutionDir)$(Configuration)\src\Helpers\Config.json" "D:\Game
     <ClInclude Include="src\Extensions\Game\MW05\Effects\Timeout.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\AYAYAAYAYA.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\TheUpsideDown.hpp" />
-    <ClInclude Include="src\Extensions\Game\MW05\Effects\WarpDrive.hpp" />
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\AGoodSenseOfSpeed.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\WideCars.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\YoBroIsThatASupra.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\YouAreSafeThisTime.hpp" />
