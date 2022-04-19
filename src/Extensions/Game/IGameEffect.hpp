@@ -44,10 +44,10 @@ namespace Extensions::Game {
     bool mIsEnabled;
 
     // Name
-    const std::string mName;
+    std::string mName;
 
     // Description
-    const std::string mDescription;
+    std::string mDescription;
 
     // Active status
     Status mStatus;
