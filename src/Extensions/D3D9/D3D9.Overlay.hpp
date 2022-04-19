@@ -1,4 +1,4 @@
-/*
+﻿/*
 // clang-format off
 //
 //    NFS Chaos Mod (NFS-Chat-Chaos-Mod)
@@ -259,8 +259,7 @@ namespace Extensions::D3D9::Overlay {
 
           // Center text
           const ImVec2 str_size = ImGui::CalcTextSize(format_array.data());
-          const ImVec2 str_pos =
-              ImVec2(sVoteBarRect.width + ImGui::GetFontSize() * 1.5f, sVoteBarRect.y + y_diff + (sVoteBarRect.height - str_size.y) / 2.0f);
+          const ImVec2 str_pos  = ImVec2(sVoteBarRect.width + ImGui::GetFontSize() * 1.5f, sVoteBarRect.y + y_diff + (sVoteBarRect.height - str_size.y) / 2.0f);
 
           // Draw shadow
           {
@@ -308,32 +307,41 @@ namespace Extensions::D3D9::Overlay {
         const auto time_now = std::chrono::steady_clock::now();
 
         for (std::size_t i = 0; i < num_active_effects; i++) {
-          format_array.fill(NULL);
-
-          const auto cursor_screen = ImGui::GetCursorScreenPos();
-          const auto cursor        = ImGui::GetCursorPos();
-
-          const auto& effect              = active_effects[i];
-          const auto& ms_since_activation = std::chrono::duration_cast<std::chrono::milliseconds>(time_now - effect->GetTimeActivated());
-          const auto  ms_elapsed          = effect->GetDuration() - ms_since_activation;
-          if (ms_elapsed < 0ms) continue;
-
-          const float remaining_percent   = static_cast<float>(ms_since_activation.count()) / static_cast<float>(effect->GetDuration().count());
           const float circle_timer_radius = ImGui::GetFontSize() / 1.35f;
+          const auto  cursor_screen       = ImGui::GetCursorScreenPos();
+          const auto  cursor              = ImGui::GetCursorPos();
+
+          const auto& effect               = active_effects[i];
+          const auto& ms_since_activation  = std::chrono::duration_cast<std::chrono::milliseconds>(time_now - effect->GetTimeActivated());
+          const auto  ms_elapsed           = effect->GetDuration() - ms_since_activation;
+          const bool  waiting_deactivation = ms_elapsed < 0ms;
+          const bool  is_status_effect     = effect->GetIsStatusEffect();
+
+          float remaining_percent = static_cast<float>(ms_since_activation.count()) / static_cast<float>(effect->GetDuration().count());
+          if (waiting_deactivation || is_status_effect) remaining_percent = 0.0f;
 
           // Circle timer
           {
             const ImVec2 arc   = ImVec2(cursor_screen + ImVec2(8.0f + circle_timer_radius, 4.0f + circle_timer_radius));
             const float  a_min = IM_PI * 1.5f;
             const float  a_max = (IM_PI * -0.5f) + remaining_percent * (IM_PI * 2.0f);
+            // color
+            ImU32 circle_color;
+            if (waiting_deactivation)
+              circle_color = IM_COL32(255, 46, 49, 155);
+            else if (is_status_effect)
+              circle_color = IM_COL32(46, 154, 255, 155);
+            else
+              circle_color = ImGui::GetColorU32(ImGui::GetStyleColorVec4(ImGuiCol_Button));
 
             ImGui::GetWindowDrawList()->PathArcTo(arc - ImVec2(1.0f, -1.0f), circle_timer_radius, a_min, IM_PI * -0.5f);
             ImGui::GetWindowDrawList()->PathStroke(IM_COL32(0, 0, 0, 100), ImDrawFlags_None, 4.0f);
             ImGui::GetWindowDrawList()->PathArcTo(arc, circle_timer_radius, a_min, a_max);
-            ImGui::GetWindowDrawList()->PathStroke(ImGui::GetColorU32(ImGui::GetStyleColorVec4(ImGuiCol_ButtonHovered)), ImDrawFlags_None, 4.0f);
+            ImGui::GetWindowDrawList()->PathStroke(circle_color, ImDrawFlags_None, 4.0f);
 
             // Seconds inside circle
-            {
+            if (!is_status_effect) {
+              format_array.fill(NULL);
               fmt::format_to_n(format_array.data(), format_array.max_size(), "{}", std::chrono::duration_cast<std::chrono::seconds>(ms_elapsed).count());
 
               const ImVec2 str_pos =
