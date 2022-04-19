@@ -664,6 +664,24 @@
     <ClInclude Include="src\Extensions\Game\MW05\Effects\MirrorPort.hpp">
       <Filter>Extensions\Game\MW05\Effects</Filter>
     </ClInclude>
+    <ClInclude Include="src\Extensions\Game\IFakeGameEffect.hpp">
+      <Filter>Extensions\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeTeleportToOldBridge.hpp">
+      <Filter>Extensions\Game\MW05\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeTeleportToRandomCar.hpp">
+      <Filter>Extensions\Game\MW05\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeTeleportToRandomCop.hpp">
+      <Filter>Extensions\Game\MW05\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeTeleportToRandomRacer.hpp">
+      <Filter>Extensions\Game\MW05\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeBlowEngine.hpp">
+      <Filter>Extensions\Game\MW05\Effects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="NFS_ChatChaosMod.licenseheader" />

@@ -139,6 +139,11 @@
 #include "Extensions/Game/MW05/Effects/PimpMyRide.hpp"
 #include "Extensions/Game/MW05/Effects/InvisibleWorld.hpp"
 #include "Extensions/Game/MW05/Effects/MirrorPort.hpp"
+#include "Extensions/Game/MW05/Effects/FakeTeleportToOldBridge.hpp"
+#include "Extensions/Game/MW05/Effects/FakeTeleportToRandomCar.hpp"
+#include "Extensions/Game/MW05/Effects/FakeTeleportToRandomCop.hpp"
+#include "Extensions/Game/MW05/Effects/FakeTeleportToRandomRacer.hpp"
+#include "Extensions/Game/MW05/Effects/FakeBlowEngine.hpp"
 
 // Modifiers
 #include "Extensions/Game/MW05/Modifiers/CarScaleModifier.hpp"
@@ -411,6 +416,11 @@ namespace Extensions::Game::MW05 {
       IGameEffectsHandler::AddEffect(new Effects::PimpMyRide());
       IGameEffectsHandler::AddEffect(new Effects::InvisibleWorld());
       IGameEffectsHandler::AddEffect(new Effects::MirrorPort());
+      IGameEffectsHandler::AddEffect(new Effects::FakeTeleportToOldBridge());
+      IGameEffectsHandler::AddEffect(new Effects::FakeTeleportToRandomCar());
+      IGameEffectsHandler::AddEffect(new Effects::FakeTeleportToRandomCop());
+      IGameEffectsHandler::AddEffect(new Effects::FakeTeleportToRandomRacer());
+      IGameEffectsHandler::AddEffect(new Effects::FakeBlowEngine());
 
       // Sort for config handler
       std::sort(std::begin(IGameEffectsHandler::g_AllEffects), std::end(IGameEffectsHandler::g_AllEffects),

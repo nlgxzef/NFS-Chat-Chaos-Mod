@@ -58,7 +58,8 @@ class FMODWrapper {
     TwistIt,
     PullIt,
     SpinIt,
-    YouHaveOfficiallyBeenPimped
+    YouHaveOfficiallyBeenPimped,
+    Sike
   };
 
  private:
@@ -86,7 +87,8 @@ class FMODWrapper {
                                                                             {"twistit.mp3", SoundFX::TwistIt},
                                                                             {"pullit.mp3", SoundFX::PullIt},
                                                                             {"spinit.mp3", SoundFX::SpinIt},
-                                                                            {"youhaveofficiallybeenpimped.mp3", SoundFX::YouHaveOfficiallyBeenPimped}};
+                                                                            {"youhaveofficiallybeenpimped.mp3", SoundFX::YouHaveOfficiallyBeenPimped},
+                                                                            {"sike.mp3", SoundFX::Sike}};
 
  public:
   FMOD::System*                                     mFMODSystem;

@@ -255,5 +255,20 @@ namespace ChaosMod::DefaultConfigFile {
       "World\",\"Description\":\"Hasta la vista, el "
       "mundo\",\"IsEnabled\":true,\"IsStatusEffect\":false,\"NeedsActivationWarning\":false,\"Duration\":60.0,\"IncompatibleWith\":[107,108]},{\"Name\":"
       "\"MirrorPort\",\"Description\":\"Mirror, mirror, on the wall, who\'s the fastest of them "
-      "all?\",\"IsEnabled\":true,\"IsStatusEffect\":false,\"NeedsActivationWarning\":false,\"Duration\":60.0,\"IncompatibleWith\":[23,83]}]}";
+      "all?\",\"IsEnabled\":true,\"IsStatusEffect\":false,\"NeedsActivationWarning\":false,\"Duration\":60.0,\"IncompatibleWith\":[23,83]},{\"Name\":\"Fake "
+      "Teleport To Old Bridge\",\"FakeName\":\"Teleport To Old Bridge\",\"Description\":\"GOT EMM PeepoLaughPoint\",\"FakeDescription\":\"So is the game "
+      "finished now or "
+      "what?\",\"IsEnabled\":true,\"IsStatusEffect\":true,\"NeedsActivationWarning\":false,\"Duration\":10.0,\"RevealDelay\":5.0,\"IncompatibleWith\":[]},{"
+      "\"Name\":\"Fake Teleport To Random Car\",\"FakeName\":\"Teleport To Random Car\",\"Description\":\"GOT EMM "
+      "PeepoLaughPoint\",\"FakeDescription\":\"What\'s he doing over "
+      "there?\",\"IsEnabled\":true,\"IsStatusEffect\":true,\"NeedsActivationWarning\":false,\"Duration\":10.0,\"RevealDelay\":5.0,\"IncompatibleWith\":[]},{"
+      "\"Name\":\"Fake Teleport To Random Cop\",\"FakeName\":\"Teleport To Random Cop\",\"Description\":\"GOT EMM "
+      "PeepoLaughPoint\",\"FakeDescription\":\"It\'s important to visit your "
+      "elderlies\",\"IsEnabled\":true,\"IsStatusEffect\":true,\"NeedsActivationWarning\":false,\"Duration\":10.0,\"RevealDelay\":5.0,\"IncompatibleWith\":[]},{"
+      "\"Name\":\"Fake Teleport To Random Racer\",\"FakeName\":\"Teleport To Random Racer\",\"Description\":\"GOT EMM "
+      "PeepoLaughPoint\",\"FakeDescription\":\"Remember: they are what you are racing "
+      "against\",\"IsEnabled\":true,\"IsStatusEffect\":true,\"NeedsActivationWarning\":false,\"Duration\":10.0,\"RevealDelay\":5.0,\"IncompatibleWith\":[]},{"
+      "\"Name\":\"Fake Blow Engine\",\"FakeName\":\"Too Much NOS\",\"Description\":\"GOT EMM PeepoLaughPoint\",\"FakeDescription\":\"Told you not to boost "
+      "that "
+      "much\",\"IsEnabled\":true,\"IsStatusEffect\":true,\"NeedsActivationWarning\":false,\"Duration\":10.0,\"RevealDelay\":3.0,\"IncompatibleWith\":[41]}]}";
 }

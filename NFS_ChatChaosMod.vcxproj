@@ -565,6 +565,7 @@ echo f | xcopy "$(SolutionDir)$(Configuration)\src\Helpers\Config.json" "D:\Game
     <ClInclude Include="src\Extensions\Game\Carbon\Effects\YouShouldHaveSaved.hpp" />
     <ClInclude Include="src\Extensions\Game\Carbon\GameEffectsHandler.hpp" />
     <ClInclude Include="src\Extensions\Game\Carbon\Modifiers\CarScaleModifier.hpp" />
+    <ClInclude Include="src\Extensions\Game\IFakeGameEffect.hpp" />
     <ClInclude Include="src\Extensions\Game\IGameEffectsHandler.hpp" />
     <ClInclude Include="src\Extensions\Game\IGameEffect.hpp" />
     <ClInclude Include="src\Extensions\Game\IGameplayModifier.hpp" />
@@ -580,6 +581,11 @@ echo f | xcopy "$(SolutionDir)$(Configuration)\src\Helpers\Config.json" "D:\Game
     <ClInclude Include="src\Extensions\Game\MW05\Effects\CameraSwitcheroo.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\Chernobyl.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\BluetoothController.hpp" />
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeBlowEngine.hpp" />
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeTeleportToOldBridge.hpp" />
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeTeleportToRandomCar.hpp" />
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeTeleportToRandomCop.hpp" />
+    <ClInclude Include="src\Extensions\Game\MW05\Effects\FakeTeleportToRandomRacer.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\GetBackHere.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\ConvoyTime.hpp" />
     <ClInclude Include="src\Extensions\Game\MW05\Effects\CrazyTaxi.hpp" />

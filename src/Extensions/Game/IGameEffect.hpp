@@ -44,10 +44,10 @@ namespace Extensions::Game {
     bool mIsEnabled;
 
     // Name
-    std::string mName;
+    const std::string mName;
 
     // Description
-    std::string mDescription;
+    const std::string mDescription;
 
     // Active status
     Status mStatus;
@@ -61,7 +61,7 @@ namespace Extensions::Game {
     // Remaining cooldown (remaining number of effects needed to be activated before this effect is available)
     std::uint32_t mRemainingCooldown;
 
-    // Duration (in seconds)
+    // Duration
     std::chrono::milliseconds mDuration;
 
     // Whether the effect only needs to be activated
@@ -93,12 +93,12 @@ namespace Extensions::Game {
    public:
     /// Info
 
-    inline std::uint32_t      GetIndex() const { return mIndex; }
-    inline bool               GetIsEnabled() const { return mIsEnabled; }
-    inline const std::string& GetName() const { return mName; }
-    inline const std::string& GetDescription() const { return mDescription; }
-    inline bool               GetIsStatusEffect() const { return mIsStatusEffect; }
-    inline bool               GetNeedsActivationWarning() const { return mNeedsActivationWarning; }
+    inline std::uint32_t       GetIndex() const { return mIndex; }
+    inline bool                GetIsEnabled() const { return mIsEnabled; }
+    virtual const std::string& GetName() const { return mName; }
+    virtual const std::string& GetDescription() const { return mDescription; }
+    inline bool                GetIsStatusEffect() const { return mIsStatusEffect; }
+    inline bool                GetNeedsActivationWarning() const { return mNeedsActivationWarning; }
 
     /// Status
 
@@ -139,7 +139,7 @@ namespace Extensions::Game {
 
     /// Active tick
 
-    inline void ActiveTick() {
+    virtual void ActiveTick() {
       if (GetStatus() == Status::Active) _activeTick();
     }
 
