@@ -208,7 +208,8 @@ namespace Extensions::Game {
           if (effect->GetRemainingCooldown() > 0) continue;
 
           bool is_compatible = true;
-          for (const auto& _activeEffect : g_ActiveEffects) is_compatible &= _activeEffect->IsCompatibleWith(effect->GetIndex());
+          for (const auto& aEffect : g_ActiveEffects) is_compatible &= aEffect->IsCompatibleWith(effect->GetIndex());
+          for (const auto& qEffect : g_ActivateQueue) is_compatible &= qEffect->IsCompatibleWith(effect->GetIndex());
           if (is_compatible) available_idx.push_back(idx);
         }
         // there aren't enough effects that satisfy the vote criteria, so just keep going
